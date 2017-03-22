@@ -11,13 +11,14 @@
     <a-assets>
       <a-asset-item id="outdoor-obj" src="woods.obj"></a-asset-item>
       <a-asset-item id="outdoor-mtl" src="woods.mtl"></a-asset-item>
-      <a-asset-item id="aidan-obj" src="aidan.obj"></a-asset-item>
-      <img id="lizard-texture" src="MinecraftSkyDay.png">
+      <a-asset-item id="lizard-obj" src="lizard.obj"></a-asset-item>
+      <a-asset-item id="lizard-mtl" src="lizard.mtl"></a-asset-item>
+
     </a-assets>
     <a-sky src="MinecraftSkyDay.png"></a-sky>
     <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="8 -8 -5" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
-    <a-entity obj-model="obj: #aidan-obj" position="-8 -6 -12" rotation="-90 45 0" scale="0.2 0.2 0.2" material="src: #lizard-texture; color: darkgrey; opacity:1">
-    <a-camera position="70 -50 20" rotation="-90 180 0" wasd-controls="fly: true" look-controls>
+    <a-entity obj-model="obj: #lizard-obj; mtl: #lizard-mtl" position="8 -8 -5" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
+    <a-camera position="40 -3 -7" rotation="0 100 0" wasd-controls="fly: true" look-controls>
     </a-camera>
     </a-scene>
   </body>
