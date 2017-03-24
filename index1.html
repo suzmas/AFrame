@@ -19,16 +19,17 @@
     </a-assets>
     <a-sky src="MinecraftSkyDay.png"></a-sky>
 
-    <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="1.53 -0.11 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
+    <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
     </a-entity>
 
-    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 -0.11 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
+    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
-               from="1.53 -0.11 -5.00"
+               from="1.53 0 -5.00"
                to="1.53 1.58 -5.00"
                direction="alternate"
-               repeat=30>
+               repeat="1"
+               begin="mouseenter">
         </a-animation>
     </a-entity>
 
@@ -41,6 +42,7 @@
     </a-entity>
 
     <a-camera position="2 2.5 -8" wasd-controls="fly: true" rotation="0 90 0" look-controls>
+      <a-cursor opacity="0.5"></a-cursor>
     </a-camera>
     </a-scene>
   </body>
