@@ -9,8 +9,12 @@
   <body>
     <a-scene>
     <a-assets>
-      <a-asset-item id="outdoor-obj" src="woods.obj"></a-asset-item>
-      <a-asset-item id="outdoor-mtl" src="woods.mtl"></a-asset-item>
+      <a-asset-item id="outdoor-obj" src="campground.obj"></a-asset-item>
+      <a-asset-item id="outdoor-mtl" src="campground.mtl"></a-asset-item>
+      <a-asset-item id="fire-obj" src="fire.obj"></a-asset-item>
+      <a-asset-item id="fire-mtl" src="fire.mtl"></a-asset-item>
+      <a-asset-item id="tree-obj" src="tree.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="tree.mtl"></a-asset-item>
       <a-asset-item id="witch-obj" src="witch.obj"></a-asset-item>
       <a-asset-item id="witch-mtl" src="witch.mtl"></a-asset-item>
       <a-asset-item id="bunny-obj" src="bunny.obj"></a-asset-item>
@@ -20,6 +24,28 @@
     <a-sky src="MinecraftSkyDay.png"></a-sky>
 
     <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
+    </a-entity>
+
+    <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="8.53 0 -10.00" rotation="-90 0 0" scale="0.12 0.12 0.12">
+    </a-entity>
+    <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="4.53 0 -5.00" rotation="-90 0 0" scale="0.12 0.1 0.12">
+    </a-entity>
+
+    <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="47.22 0 -8.58" rotation="-90 0 0" scale="0.16 0.14 0.16">
+      <a-animation attribute="rotation"
+               dur="5000"
+               fill="forwards"
+               to="270 100 0">
+        </a-animation>
+    </a-entity>
+    <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="47.75 0 -7.86" rotation="-90 0 0" scale="0.16 0.14 0.16">
+      <a-animation attribute="position"
+            dur="1000"
+            from="47.75 0 -7.86"
+            to="47.75 -0.1 -7.86"
+            direction="alternate"
+            repeat="indefinite">
+        </a-animation>
     </a-entity>
 
     <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
@@ -32,8 +58,18 @@
                begin="mouseenter">
         </a-animation>
     </a-entity>
+    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position=".12 3.06 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
+      <a-animation attribute="position"
+               dur="500"
+               from=".12 3.06 9.20"
+               to=".12 5.06 9.20"
+               direction="alternate"
+               repeat="5"
+               begin="mouseenter">
+        </a-animation>
+    </a-entity>
 
-    <a-entity obj-model="obj: #witch-obj; mtl: #witch-mtl" position="-20 .5 17.5" rotation="-90 100 0" scale="0.1 0.1 0.1">
+    <a-entity obj-model="obj: #witch-obj; mtl: #witch-mtl" position="-20 .5 17.5" rotation="-90 100 0" scale="0.04 0.04 0.04">
       <a-animation attribute="rotation"
                dur="5000"
                fill="forwards"
