@@ -5,6 +5,7 @@
     <title>Hello, World! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="index1.js"></script>
   </head>
   <body>
     <a-scene>
@@ -32,23 +33,25 @@
     </a-entity>
 
     <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="47.22 0 -8.58" rotation="-90 0 0" scale="0.16 0.14 0.16">
-      <a-animation attribute="rotation"
-               dur="5000"
-               fill="forwards"
-               to="270 100 0">
+      <a-animation attribute="scale"
+            dur="1000"
+            from="0.16 0.14 0.16"
+            to="0.16 0.15 0.16"
+            direction="alternate"
+            repeat="indefinite">
         </a-animation>
     </a-entity>
     <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="47.75 0 -7.86" rotation="-90 0 0" scale="0.16 0.14 0.16">
-      <a-animation attribute="position"
+      <a-animation attribute="scale"
             dur="1000"
-            from="47.75 0 -7.86"
-            to="47.75 -0.1 -7.86"
+            from="0.16 0.14 0.16"
+            to="0.16 0.13 0.16"
             direction="alternate"
             repeat="indefinite">
         </a-animation>
     </a-entity>
 
-    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
+    <a-entity  obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
                from="1.53 0 -5.00"
@@ -58,11 +61,11 @@
                begin="mouseenter">
         </a-animation>
     </a-entity>
-    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position=".12 3.06 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
+    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="-0.53 2.6 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
-               from=".12 3.06 9.20"
-               to=".12 5.06 9.20"
+               from="-0.53 2.6 9.20"
+               to="-0.53 5 9.20"
                direction="alternate"
                repeat="5"
                begin="mouseenter">
