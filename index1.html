@@ -54,14 +54,20 @@
     <a-entity  obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
-               from="1.53 0 -5.00"
-               to="1.53 1.58 -5.00"
-               direction="alternate"
+               to="2.53 1 -5.00"
                repeat="1"
                begin="mouseenter">
         </a-animation>
+        <a-animation attribute="position"
+                 delay="499"
+                 dur="300"
+                 from="2.53 1 -5.00"
+                 to="3.53 0 -5.00"
+                 repeat="1"
+                 begin="mouseenter"
+        </a-animation>
     </a-entity>
-    <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="-0.53 2.6 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
+    <a-entity hop-away obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="-0.53 2.6 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
                from="-0.53 2.6 9.20"
