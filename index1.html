@@ -18,6 +18,8 @@
       <a-asset-item id="tree-mtl" src="tree.mtl"></a-asset-item>
       <a-asset-item id="witch-obj" src="witch.obj"></a-asset-item>
       <a-asset-item id="witch-mtl" src="witch.mtl"></a-asset-item>
+      <a-asset-item id="arm-obj" src="arm.obj"></a-asset-item>
+      <a-asset-item id="arm-mtl" src="arm.mtl"></a-asset-item>
       <a-asset-item id="bunny-obj" src="bunny.obj"></a-asset-item>
       <a-asset-item id="bunny-mtl" src="bunny.mtl"></a-asset-item>
 
@@ -36,19 +38,26 @@
       <a-animation attribute="scale"
             dur="1000"
             from="0.16 0.14 0.16"
-            to="0.16 0.15 0.16"
+            to="0.16 0.145 0.16"
             direction="alternate"
             repeat="indefinite">
         </a-animation>
     </a-entity>
     <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="47.75 0 -7.86" rotation="-90 0 0" scale="0.16 0.14 0.16">
       <a-animation attribute="scale"
-            dur="1000"
+            dur="300"
             from="0.16 0.14 0.16"
-            to="0.16 0.13 0.16"
+            to="0.16 0.138 0.16"
             direction="alternate"
             repeat="indefinite">
         </a-animation>
+        <a-animation attribute="position"
+              dur="300"
+              from="47.75 0 -7.86"
+              to="47.75 -.2 -7.86"
+              direction="alternate"
+              repeat="indefinite">
+          </a-animation>
     </a-entity>
 
     <a-entity  obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
@@ -79,11 +88,12 @@
     </a-entity>
 
     <a-entity obj-model="obj: #witch-obj; mtl: #witch-mtl" position="-20 .5 17.5" rotation="-90 100 0" scale="0.04 0.04 0.04">
+    </a-entity>
+    <a-entity obj-model="obj: #arm-obj; mtl: #arm-mtl" position="-20 .5 17.5" rotation="-90 100 0" scale="0.04 0.04 0.04">
       <a-animation attribute="rotation"
-               dur="5000"
-               fill="forwards"
-               to="270 100 0">
-        </a-animation>
+      to="-90 110 0"
+      direction="alternate">
+      </a-animation>
     </a-entity>
 
     <a-camera position="2 2.5 -8" wasd-controls="fly: true" rotation="0 90 0" look-controls>
