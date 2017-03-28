@@ -5,7 +5,6 @@
     <title>Hello, World! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="index1.js"></script>
   </head>
   <body>
     <a-scene>
@@ -76,6 +75,7 @@
                  begin="mouseenter"
         </a-animation>
     </a-entity>
+    <a-entity id=1 hop-away="event: anEvent; message: Hey All!!!!!"></a-entity>
     <a-entity hop-away obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="-0.53 2.6 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
       <a-animation attribute="position"
                dur="500"
@@ -100,5 +100,7 @@
       <a-cursor opacity="0.5"></a-cursor>
     </a-camera>
     </a-scene>
+    <script src="index1.js"></script>
+
   </body>
 </html>
