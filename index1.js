@@ -78,6 +78,8 @@ AFRAME.registerComponent('box', {
     this.el.removeObject3D('mesh');
   }
 });
+
+
 // follow compononent tutorial
 AFRAME.registerComponent('follow', {
   schema: {
