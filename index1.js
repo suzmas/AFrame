@@ -44,31 +44,31 @@ AFRAME.registerComponent('box', {
     depth: {type: 'number', default: 1},
     color: {type: 'color', default: '#AAA'}
   },
-
-  init: function() {
+  init: function () {
     var data = this.data;
     var el = this.el;
-
-    //create geometry
     this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-    //create material
-    this.material = new THREE.Mesh(this.geometry, this.material);
-    // set mesh on entity
+    this.material = new THREE.MeshStandardMaterial({color: data.color});
+    this.mesh = new THREE.Mesh(this.geometry, this.material);
     el.setObject3D('mesh', this.mesh);
   },
-
-  update: function(oldData) {
+  /**
+   * Update the mesh in response to property updates.
+   */
+  update: function (oldData) {
     var data = this.data;
     var el = this.el;
-
+    // If `oldData` is empty, then this means we're in the initialization process.
+    // No need to update.
     if (Object.keys(oldData).length === 0) { return; }
-
+    // Geometry-related properties changed. Update the geometry.
     if (data.width !== oldData.width ||
         data.height !== oldData.height ||
         data.depth !== oldData.depth) {
-          el.getObject3D('mesh').geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-      }
-
+      el.getObject3D('mesh').geometry = new THREE.BoxBufferGeometry(data.width, data.height,
+                                                                    data.depth);
+    }
+    // Material-related properties changed. Update the material.
     if (data.color !== oldData.color) {
       el.getObject3D('mesh').material.color = data.color;
     }
@@ -76,5 +76,44 @@ AFRAME.registerComponent('box', {
 
   remove: function() {
     this.el.removeObject3D('mesh');
+  }
+});
+// follow compononent tutorial
+AFRAME.registerComponent('follow', {
+  schema: {
+    target: {type: 'selector'},
+    speed: {type: 'number'}
+  },
+  init: function() {
+    this.directionVec3 = new THREE.Vector3();
+  },
+
+  tick: function(time, timeDelta) {
+    var directionVec3 = this.directionVec3;
+
+    var targetPosition = this.data.target.object3D.position;
+    var currentPosition = this.el.object3D.position;
+
+    // subtract the vectors to get dir
+    directionVec3.copy(targetPosition).sub(currentPosition);
+
+    // calc dist
+    var distance = directionVec3.length();
+    console.log(distance);
+
+    if (distance < 1) { return; }
+
+    // scale down magnitude to match speed
+    var factor = this.data.speed / distance;
+    ['x', 'y', 'z'].forEach(function (axis) {
+      directionVec3[axis] *= factor * (timeDelta / 1000);
+    });
+
+    // translate entity in dir toward target
+    this.el.setAttribute('position', {
+      x: currentPosition.x + directionVec3.x,
+      y: currentPosition.y + directionVec3.y,
+      z: currentPosition.z + directionVec3.z
+    });
   }
 });
