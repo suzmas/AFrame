@@ -84,7 +84,8 @@ AFRAME.registerComponent('box', {
 AFRAME.registerComponent('follow', {
   schema: {
     target: {type: 'selector'},
-    speed: {type: 'number'}
+    speed: {type: 'number'},
+    faceTarget:{type: 'boolean', default: true}
   },
   init: function() {
     this.directionVec3 = new THREE.Vector3();
@@ -114,8 +115,13 @@ AFRAME.registerComponent('follow', {
     // translate entity in dir toward target
     this.el.setAttribute('position', {
       x: currentPosition.x + directionVec3.x,
-      y: currentPosition.y + directionVec3.y,
+      y: currentPosition.y, // + directionVec3.y,
       z: currentPosition.z + directionVec3.z
     });
+
+    if (this.data.faceTarget == true){
+     var yAngle = 90 - Math.atan2(directionVec3.z, directionVec3.x) * (180 / Math.PI);
+     this.el.setAttribute('rotation', 'y', yAngle);
+   }
   }
 });
