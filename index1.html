@@ -6,6 +6,8 @@
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="index1.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+
 
   </head>
   <body>
@@ -18,15 +20,15 @@
       <a-asset-item id="fire-mtl" src="fire.mtl"></a-asset-item>
       <a-asset-item id="tree-obj" src="tree.obj"></a-asset-item>
       <a-asset-item id="tree-mtl" src="tree.mtl"></a-asset-item>
-      <a-asset-item id="witch-obj" src="witch.obj"></a-asset-item>
-      <a-asset-item id="witch-mtl" src="witch.mtl"></a-asset-item>
-      <a-asset-item id="arm-obj" src="arm.obj"></a-asset-item>
-      <a-asset-item id="arm-mtl" src="arm.mtl"></a-asset-item>
       <a-asset-item id="bunny-obj" src="bunny.obj"></a-asset-item>
       <a-asset-item id="bunny-mtl" src="bunny.mtl"></a-asset-item>
-
+      <a-asset-item id="myPlyModel" src="carlosface.obj"></a-asset-item>
     </a-assets>
     <a-sky src="MinecraftSkyDay.png"></a-sky>
+
+
+    <a-entity obj-model="obj: #myPlyModel" rotation="0 0 0" position="10 5 1" scale="0.16 0.16 0.16"></a-entity>
+
 
     <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
     </a-entity>
