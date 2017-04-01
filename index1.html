@@ -22,6 +22,8 @@
       <a-asset-item id="tree-mtl" src="tree.mtl"></a-asset-item>
       <a-asset-item id="bunny-obj" src="bunny.obj"></a-asset-item>
       <a-asset-item id="bunny-mtl" src="bunny.mtl"></a-asset-item>
+      <a-asset-item id="dog-obj" src="dog.obj"></a-asset-item>
+      <a-asset-item id="dog-mtl" src="dog.mtl"></a-asset-item>
       <a-asset-item id="myPlyModel" src="carlosface.obj"></a-asset-item>
     </a-assets>
     <a-sky src="MinecraftSkyDay.png"></a-sky>
@@ -71,27 +73,14 @@
                repeat="1"
                begin="mouseenter">
         </a-animation>
-        <a-animation attribute="position"
-                 delay="499"
-                 dur="300"
-                 from="2.53 1 -5.00"
-                 to="3.53 0 -5.00"
-                 repeat="1"
-                 begin="mouseenter"
-        </a-animation>
     </a-entity>
-    <a-entity follow="target: #user; speed: 2" obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="-0.53 2.6 9.20" rotation="-88 0 0" scale="0.16 0.16 0.16">
-      <a-animation attribute="position"
-               dur="500"
-               from="-0.53 2.6 9.20"
-               to="-0.53 5 9.20"
-               direction="alternate"
-               repeat="5"
-               begin="mouseenter">
-        </a-animation>
+    <a-entity obj-model="obj: #dog-obj; mtl: #dog-mtl" position="5 0 5" rotation="-90 0 0" scale="0.1 0.1 0.1" follow="target: #user; speed: 2">
     </a-entity>
+    <!--
+    <a-entity follow="target: #user; speed: 2" obj-model="obj: #dog-obj; mtl: #dog-mtl" position="2 2.5 -8" rotation="-90 0 0" scale="0.1 0.1 0.1">
+    </a-entity> -->
 
-    <a-camera id="user" position="2 2.5 -8" rotation="0 90 0" look-controls>
+    <a-camera id="user" position="2 0 -8" rotation="0 90 0" look-controls>
       <a-cursor opacity="0.5"></a-cursor>
     </a-camera>
     </a-scene>
