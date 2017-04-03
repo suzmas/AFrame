@@ -21,8 +21,6 @@ AFRAME.registerComponent('hop-away', {
       })
     };
 
-
-
   remove: function() {
     var data = this.data;
     var el = this.el;
