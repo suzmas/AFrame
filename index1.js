@@ -5,27 +5,23 @@ AFRAME.registerComponent('hop-away', {
     message: {type: 'string', default: 'Hello, World!'}
   },
 
-  multiple: true,
-
   init: function() {
     var self = this;
     this.eventHandlerFn = function() { console.log(self.data.message);};
   },
 
-  update: function(oldData) {
-    var data = this.data;
-    var el = this.el;
+  hop: function() {
+    var dist = Math.random(2);
 
-    if (oldData.event && data.event !== oldData.event) {
-      el.removeEventListener(oldData.event, this.eventHandlerFn);
-    }
+    for (i=0; i<dist; i++){
+      this.el.setAttribute('position', {
+        x: currentPosition.x + directionVec3.x,
+        y: currentPosition.y, // + directionVec3.y,
+        z: currentPosition.z + directionVec3.z
+      })
+    };
 
-    if (data.event) {
-      el.addEventListener(data.event, this.eventHandlerFn);
-    } else {
-    console.log(data.message);
-    }
-  },
+
 
   remove: function() {
     var data = this.data;
@@ -104,7 +100,7 @@ AFRAME.registerComponent('follow', {
     var distance = directionVec3.length();
     console.log(distance);
 
-    if (distance < 1) { return; }
+    if (distance < 10) { return; }
 
     // scale down magnitude to match speed
     var factor = this.data.speed / distance;
@@ -120,8 +116,8 @@ AFRAME.registerComponent('follow', {
     });
 
     if (this.data.faceTarget == true){
-     var yAngle = 90 - Math.atan2(directionVec3.z, directionVec3.x) * (180 / Math.PI);
-     this.el.setAttribute('rotation', 'y', yAngle);
+     var zAngle = 90 - Math.atan2(directionVec3.z, directionVec3.x) * (180 / Math.PI);
+     this.el.setAttribute('rotation', 'y', zAngle);
    }
   }
 });
