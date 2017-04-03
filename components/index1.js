@@ -20,6 +20,7 @@ AFRAME.registerComponent('hop-away', {
         z: currentPosition.z + directionVec3.z
       })
     };
+  },
 
   remove: function() {
     var data = this.data;
@@ -79,7 +80,7 @@ AFRAME.registerComponent('follow', {
   schema: {
     target: {type: 'selector'},
     speed: {type: 'number'},
-    faceTarget:{type: 'boolean', default: true}
+    faceTarget:{type: 'boolean', default: false}
   },
   init: function() {
     this.directionVec3 = new THREE.Vector3();
@@ -98,7 +99,7 @@ AFRAME.registerComponent('follow', {
     var distance = directionVec3.length();
     console.log(distance);
 
-    if (distance < 10) { return; }
+    if (distance < 8) { return; }
 
     // scale down magnitude to match speed
     var factor = this.data.speed / distance;
