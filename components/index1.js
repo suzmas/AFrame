@@ -70,7 +70,7 @@ AFRAME.registerComponent('box', {
 
   remove: function() {
     this.el.removeObject3D('mesh');
-  }
+  },
 });
 
 

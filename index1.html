@@ -5,28 +5,26 @@
     <title>Hello, World! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="index1.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
-
+    <script src="./components/index1.js"></script>
 
   </head>
   <body>
 
     <a-scene>
     <a-assets>
-      <a-asset-item id="outdoor-obj" src="campground.obj"></a-asset-item>
-      <a-asset-item id="outdoor-mtl" src="campground.mtl"></a-asset-item>
-      <a-asset-item id="fire-obj" src="fire.obj"></a-asset-item>
-      <a-asset-item id="fire-mtl" src="fire.mtl"></a-asset-item>
-      <a-asset-item id="tree-obj" src="tree.obj"></a-asset-item>
-      <a-asset-item id="tree-mtl" src="tree.mtl"></a-asset-item>
-      <a-asset-item id="bunny-obj" src="bunny.obj"></a-asset-item>
-      <a-asset-item id="bunny-mtl" src="bunny.mtl"></a-asset-item>
-      <a-asset-item id="dog-obj" src="dog.obj"></a-asset-item>
-      <a-asset-item id="dog-mtl" src="dog.mtl"></a-asset-item>
-      <a-asset-item id="myPlyModel" src="carlosface.obj"></a-asset-item>
+      <a-asset-item id="outdoor-obj" src="./objects/campground.obj"></a-asset-item>
+      <a-asset-item id="outdoor-mtl" src="./objects/campground.mtl"></a-asset-item>
+      <a-asset-item id="fire-obj" src="./objects/fire.obj"></a-asset-item>
+      <a-asset-item id="fire-mtl" src="./objects/fire.mtl"></a-asset-item>
+      <a-asset-item id="tree-obj" src="./objects/tree.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="./objects/tree.mtl"></a-asset-item>
+      <a-asset-item id="bunny-obj" src="./objects/bunny.obj"></a-asset-item>
+      <a-asset-item id="bunny-mtl" src="./objects/bunny.mtl"></a-asset-item>
+      <a-asset-item id="dog-obj" src="./objects/dog.obj"></a-asset-item>
+      <a-asset-item id="dog-mtl" src="./objects/dog.mtl"></a-asset-item>
+      <a-asset-item id="myPlyModel" src="./objects/carlosface.obj"></a-asset-item>
     </a-assets>
-    <a-sky src="MinecraftSkyDay.png"></a-sky>
+    <a-sky src="./images/MinecraftSkyDay.png"></a-sky>
 
     <!-- Carlos -->
     <!-- <a-entity obj-model="obj: #myPlyModel" rotation="0 0 0" position="10 5 1" scale="0.16 0.16 0.16"></a-entity> -->
