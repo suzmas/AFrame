@@ -16,13 +16,33 @@
         <a-asset-item id="alien1-obj" src="./objects/alien1.obj"></a-asset-item>
         <a-asset-item id="alien1-mtl" src="./objects/alien1.mtl"></a-asset-item>
 
+        <a-asset-item id="tree-obj" src="./objects/tree.obj"></a-asset-item>
+        <a-asset-item id="future_tree-obj" src="./objects/future_tree.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="./objects/tree.mtl"></a-asset-item>
+
       </a-assets>
 
       <a-sky src="./images/galaxy.jpg"></a-sky>
-      <a-plane material="src: ./images/green_planet.jpg; repeat: 20 80; metalness:0.1" width="100" height="400" position="0 0 0" rotation="-90 0 0"></a-plane>
+      <a-plane material="src: ./images/green_planet.jpg; repeat: 20 80; metalness:0.1" width="60" height="60" position="0 0 0" rotation="-90 0 0"></a-plane>
+
+
+      <a-plane material="src: ./images/house.jpg;" width="20" height="16" position="0 7 -44" rotation="0 0 0"></a-plane>
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="-10 0 -38.00" rotation="-90 0 0" scale="0.08 0.08 0.1"></a-entity>
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="10 0 -40.00" rotation="-90 0 0" scale="0.08 0.08 0.1"></a-entity>
+      <a-entity obj-model="obj: #future_tree-obj;" material="color: #f8d13b; metalness: 0.5" position="-15 0 13" rotation="-90 0 0" scale=".8 .8 .8"></a-entity>
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="17 0 -48.00" rotation="-90 0 0" scale="0.08 0.08 0.07"></a-entity>
 
       <a-entity>
-        <a-entity obj-model="obj: #alien_spaceship-obj; mtl: #alien_spaceship-mtl" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0"></a-entity>
+        <a-entity obj-model="obj: #alien_spaceship-obj; mtl: #alien_spaceship-mtl" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0">
+          <a-animation attribute="position"
+                   dur="1000"
+                   from="10 0 0"
+                   to="10 -5 0"
+                   direction="alternate"
+                   repeat="1"
+                   begin="mouseenter">
+            </a-animation>
+        </a-entity>
         <a-animation attribute="rotation"
                      dur="10000"
                      fill="forwards"
@@ -54,11 +74,11 @@
       </a-entity>
 
       <!-- shrinky aliens -->
-      <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" material="opacity: 1" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0">
+      <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" material="opacity: 1" scale="0.1 0.1 0.1" rotation="-90 -100 0" position="-3 0 -25">
         <a-animation attribute="scale" from="0.1 0.1 0.1" to=".07 .07 .07" direction="alternate" begin="mouseenter"></a-animation>
       </a-entity>
 
-      <a-camera id="user" position="15 2 -5" rotation="-13 100 0" look-controls>
+      <a-camera id="user" position="18 2 15" rotation="2 0 0" look-controls>
         <a-cursor opacity="0.5"></a-cursor>
       </a-camera>
     </a-scene>
