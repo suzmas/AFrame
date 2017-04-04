@@ -29,11 +29,16 @@
                      to="0 -360 0"
                      repeat="indefinite"></a-animation>
       </a-entity>
-      <a-entity geometry="primitive: sphere" material="color: blue"  position="0 0 0"></a-entity>
+      <a-entity geometry="primitive: sphere" material="color: blue, opacity: 1"  position="0 0 0">
+      </a-entity>
 
-      <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0"></a-entity>
+      <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" material="opacity: 1" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0">
+        <a-animation attribute="scale" from="0.1 0.1 0.1" to=".07 .07 .07" direction="alternate" begin="mouseenter"></a-animation>
+      </a-entity>
 
-      <a-camera id="user" position="15 2 -5" rotation="-13 100 0" look-controls></a-camera>
+      <a-camera id="user" position="15 2 -5" rotation="-13 100 0" look-controls>
+        <a-cursor opacity="0.5"></a-cursor>
+      </a-camera>
     </a-scene>
   </body>
 </html>
