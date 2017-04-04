@@ -5,7 +5,8 @@
     <title>Space</title>
     <meta name="description" content="Space Scene">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="./components/index1.js"></script>
+    <script src="./components/follow.js"></script>
+    <script src="./components/walk.js"></script>
   </head>
   <body>
     <a-scene>
@@ -74,11 +75,12 @@
       </a-entity>
 
       <!-- shrinky aliens -->
-      <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" material="opacity: 1" scale="0.1 0.1 0.1" rotation="-90 -100 0" position="-3 0 -25">
+      <!-- <a-entity follow="target: #user; speed: 1.5;" obj-model="obj: #alien1-obj; mtl: #alien1-mtl" material="opacity: 1" scale="0.1 0.1 0.1" rotation="-90 -100 0" position="-3 0 -25">
         <a-animation attribute="scale" from="0.1 0.1 0.1" to=".07 .07 .07" direction="alternate" begin="mouseenter"></a-animation>
-      </a-entity>
+      </a-entity> -->
+      <a-entity id="target" position="10 2 15"></a-entity>
 
-      <a-camera id="user" position="18 2 15" rotation="2 0 0" look-controls>
+      <a-camera id="user" position="18 2 15" rotation="2 0 0" look-controls walk="target: #target; speed: .5;">
         <a-cursor opacity="0.5"></a-cursor>
       </a-camera>
     </a-scene>
