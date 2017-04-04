@@ -19,7 +19,6 @@
       </a-assets>
 
       <a-sky src="./images/galaxy.jpg"></a-sky>
-      <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
       <a-plane material="src: ./images/green_planet.jpg; repeat: 20 80; metalness:0.1" width="100" height="400" position="0 0 0" rotation="-90 0 0"></a-plane>
 
       <a-entity>
@@ -34,25 +33,23 @@
       <!-- planet group -->
       <a-entity>
 
-        <a-entity geometry="primitive: sphere" material="color: blue"  position="3 8 0">
+        <a-entity geometry="primitive: sphere" material="color: blue"  position="7 8 0">
           <a-animation attribute="position"
                    dur="500"
-                   from="3 8 0"
-                   to="3 8 1"
+                   from="7 8 0"
+                   to="7 4 0"
                    direction="alternate"
                    repeat="1"
                    begin="mouseenter">
             </a-animation>
         </a-entity>
         <a-entity geometry="primitive: dodecahedron" material="color: pink"  position="10 12 0"></a-entity>
-        <a-entity geometry="primitive: sphere" material="color: orange"  position="2 10 0"></a-entity>
-        <a-entity light="type: point; intensity: 0.5; distance: 30; decay: 2"
-            position="0 8 0"></a-entity>
+        <a-entity geometry="primitive: sphere" material="color: orange"  position="9 10 0"></a-entity>
 
         <a-animation attribute="rotation"
                      dur="20000"
                      fill="forwards"
-                     to="0 -360 5"
+                     to="0 -360 0"
                      repeat="indefinite"></a-animation>
       </a-entity>
 
