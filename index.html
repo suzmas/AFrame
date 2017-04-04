@@ -34,17 +34,26 @@
       <!-- planet group -->
       <a-entity>
 
-      <a-entity geometry="primitive: sphere" material="color: blue"  position="3 8 0"></a-entity>
-      <a-entity geometry="primitive: sphere" material="color: pink"  position="5 7 0"></a-entity>
-      <a-entity geometry="primitive: sphere" material="color: yellow"  position="2 10 0"></a-entity>
-      <a-entity light="type: point; intensity: 0.5; distance: 30; decay: 2"
-          position="0 8 0"></a-entity>
+        <a-entity geometry="primitive: sphere" material="color: blue"  position="3 8 0">
+          <a-animation attribute="position"
+                   dur="500"
+                   from="3 8 0"
+                   to="3 8 1"
+                   direction="alternate"
+                   repeat="1"
+                   begin="mouseenter">
+            </a-animation>
+        </a-entity>
+        <a-entity geometry="primitive: dodecahedron" material="color: pink"  position="10 12 0"></a-entity>
+        <a-entity geometry="primitive: sphere" material="color: orange"  position="2 10 0"></a-entity>
+        <a-entity light="type: point; intensity: 0.5; distance: 30; decay: 2"
+            position="0 8 0"></a-entity>
 
-      <a-animation attribute="rotation"
-                   dur="20000"
-                   fill="forwards"
-                   to="0 -360 5"
-                   repeat="indefinite"></a-animation>
+        <a-animation attribute="rotation"
+                     dur="20000"
+                     fill="forwards"
+                     to="0 -360 5"
+                     repeat="indefinite"></a-animation>
       </a-entity>
 
       <!-- shrinky aliens -->
