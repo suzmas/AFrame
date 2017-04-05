@@ -6,6 +6,8 @@
     <meta name="description" content="Space Scene">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@^3.1.1/dist/aframe-template-component.min.js"></script>
+
   </head>
   <body>
     <a-scene>
@@ -13,15 +15,21 @@
         <img id="enemy-sprite" crossorigin="" src="https://ucarecdn.com/f11bb3e6-ceb4-427c-bcaa-351cabac37d5/">
       </a-assets>
 
-      <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-        <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
-      </a-entity>
+      <script id="enemies" type="text/x-nunjucks-template">
+        <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
 
+          <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
+
+        </a-entity>
+      </script>
+
+      <a-entity template="src: #enemies"></a-entity>
 
       <a-camera id="player" position="0 1.8 0"></a-camera>
 
