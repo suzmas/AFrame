@@ -11,6 +11,9 @@
   <body>
     <a-scene>
       <a-assets>
+        <a-asset-item id="outdoor-obj" src="./objects/tinker.obj"></a-asset-item>
+        <a-asset-item id="outdoor-mtl" src="./objects/obj.mtl"></a-asset-item>
+
         <a-asset-item id="alien_spaceship-obj" src="./objects/alien_spaceship.obj"></a-asset-item>
         <a-asset-item id="alien_spaceship-mtl" src="./objects/alien_spaceship.mtl"></a-asset-item>
 
@@ -24,6 +27,9 @@
       </a-assets>
 
       <a-sky src="./images/galaxy.jpg"></a-sky>
+
+      <a-entity obj-model="obj: #outdoor-obj; mtl: #outdoor-mtl" position="1.53 -1.8 -5.00" rotation="-90 0 0" scale="0.12 0.16 0.16">
+      </a-entity>
 
       <a-entity>
         <a-entity obj-model="obj: #alien_spaceship-obj; mtl: #alien_spaceship-mtl" scale="0.1 0.1 0.1" rotation="-90 0 0" position="10 0 0">
