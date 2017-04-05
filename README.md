@@ -1,12 +1,10 @@
-# A-Frame Boilerplate
+# A-Frame Scenes
 
-Boilerplate for creating WebVR scenes using A-Frame.
+Repo for creating WebVR scenes using A-Frame.
 
 ## Getting Started
 
-There are two easy options for obtaining this A-Frame scene. It's then up to you to make it your own!
-
-### <sup>Option 1:</sup> Download the ZIP kit 📦
+### <sup>Option 1:</sup> Fork this Git repo
 
 [<img src="http://i.imgur.com/UVPZoM0.png" width="200">](https://github.com/aframevr/aframe-boilerplate/archive/master.zip)
 
@@ -30,11 +28,6 @@ After you have __[forked this repo](https://github.com/aframevr/aframe-boilerpla
 > :iphone: **Mobile pro tip:** Upon starting the development server, the URL will be logged to the console. Load that URL from a browser on your mobile device. (If your mobile phone and computer are not on the same LAN, consider using [ngrok](https://ngrok.com/) for local development and testing. [Browsersync](https://www.browsersync.io/) is also worth a gander.)
 
 <hr>
-
-### <small><sup>Option 3:</sup> Fork this CodePen example 🍴💾✒️
-
-Or, you can simply __[fork this CodePen example](http://codepen.io/team/mozvr/pen/BjygdO?editors=100)__ to dive right in. Enjoy!
-
 
 ## Publishing your scene
 
