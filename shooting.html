@@ -15,12 +15,12 @@
 <body>
   <a-scene>
     <a-assets>
-      <img id="enemy-sprite" crossorigin="" src="https://ucarecdn.com/f11bb3e6-ceb4-427c-bcaa-351cabac37d5/" />
+      <img id="enemy-alien" src="/images/alien.svg" />
 
       <script id="enemies" type="text/x-nunjucks-template">
         <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
           {% for x in range(0, 10) %}
-          <a-image class="enemy" look-at="#player" src="#enemy-sprite" transparent="true">
+          <a-image class="enemy" look-at="#player" src="#enemy-alien" transparent="true">
             // collision handler animation
             <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
           </a-image>
@@ -40,7 +40,7 @@
 
     <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener></a-camera>
 
-    <a-sky color="#252243"></a-sky>
+    <a-sky src="./images/galaxy.jpg"></a-sky>
   </a-scene>
 </body>
 
