@@ -13,7 +13,7 @@ AFRAME.registerComponent('click-to-fly', {
       console.log("CLICKED ON CAMERA");
       var camEl = document.querySelector('a-camera');
       var flying = camEl.getAttribute('click-to-fly').flying;
-      camEl.setAttribute('click-to-fly', 'flying', !flying);
+      camEl.setAttribute('click-to-fly', 'flying', flying);
     });
   },
   tick: function(t) {
