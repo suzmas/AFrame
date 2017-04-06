@@ -48,7 +48,6 @@ AFRAME.registerComponent('click-listener', {
   init: function() {
     var el = this.el;
     window.addEventListener('click', function() {
-      console.log("ouch");
       el.emit('click', null, false);
     });
   }
@@ -61,5 +60,52 @@ AFRAME.registerComponent('projectile', {
   tick: function () {
     var speed = this.data.speed;
     this.el.object3D.translateY( -speed );
+  }
+});
+
+AFRAME.registerComponent('collider', {
+  schema: {
+    target: { default: '' }
+  },
+
+  // Calc targets
+  init: function () {
+    var targetEls = this.el.sceneEl.querySelectorAll(".enemy");
+    this.targets = [];
+    for (var i=0; i<targetEls.length; i++) {
+      this.targets.push(targetEls[i].object3D);
+    }
+    this.el.object3D.updateMatrixWorld();
+  },
+
+  // check collisions w/ cylinder
+  tick: function (t) {
+    var collisionResults;
+    var directionVector;
+    var el = this.el;
+    var sceneEl = el.sceneEl;
+    this.el.setAttribute('geometry', 'buffer: false;'); //issue
+    var mesh = el.getObject3D('mesh');
+    var object3D = el.object3D;
+    var raycaster;
+    var vertices = mesh.geometry.vertices;
+    var bottomVertex = vertices[0].clone();
+    var topVertex = vertices[vertices.length -1].clone();
+
+    // calc positions of start and end of obj
+    bottomVertex.applyMatrix4(object3D.matrixWorld);
+    topVertex.applyMatrix4(object3D.matrixWorld);
+
+    // direction vec from start to end of obj
+    directionVector = topVertex.clone().sub(bottomVertex).normalize();
+
+    // raycast for collision
+    raycaster = new THREE.Raycaster(bottomVertex, directionVector, 1);
+    collisionResults = raycaster.intersectObjects(this.targets, true);
+    collisionResults.forEach(function (target) {
+      // tell enemy it was hit
+      target.object.el.emit('collider-hit', {target: el});
+      console.log('Tis but a flesh wound');
+    });
   }
 });

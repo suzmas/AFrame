@@ -20,7 +20,10 @@
       <script id="enemies" type="text/x-nunjucks-template">
         <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
           {% for x in range(0, 10) %}
-          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image class="enemy" look-at="#player" src="#enemy-sprite" transparent="true">
+            // collision handler animation
+            <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+          </a-image>
           {% endfor %}
 
           <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
@@ -28,7 +31,7 @@
       </script>
 
       <!-- Laser -->
-      <a-mixin id="laser" geometry="primitive: cylinder; radius: 0.05" material="color: white; metalness: 0.2; roughness: 0.3" rotation="90 0 0" projectile="speed: 0.4"></a-mixin>
+      <a-mixin id="laser" geometry="primitive: cylinder; radius: 0.05" material="color: white; metalness: 0.2; roughness: 0.3" rotation="90 0 0" projectile="speed: 0.4" collider="target: .enemy"></a-mixin>
 
     </a-assets>
 
