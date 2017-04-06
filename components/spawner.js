@@ -1,20 +1,24 @@
 AFRAME.registerComponent('spawner', {
   schema: {
-    on: { default: 'click' },
-    mixin: { default: '' }
+    on: {
+      default: 'click'
+    },
+    mixin: {
+      default: ''
+    }
   },
 
   /**
    * Add event listener to entity that when emitted, spawns the entity.
    */
-  update: function (oldData) {
+  update: function(oldData) {
     this.el.addEventListener(this.data.on, this.spawn.bind(this));
   },
 
   /**
    * Spawn new entity with a mixin of components at the entity's current position.
    */
-  spawn: function () {
+  spawn: function() {
     var el = this.el;
     var entity = document.createElement('a-entity');
     var matrixWorld = el.object3D.matrixWorld;
@@ -22,20 +26,22 @@ AFRAME.registerComponent('spawner', {
     var rotation = el.getAttribute('rotation');
     var entityRotation;
 
-    position.setFromMatrixPosition(matrixWorld);
-    entity.setAttribute('position', position);
-
     // Have the spawned entity face the same direction as the entity.
     // Allow the entity to further modify the inherited rotation.
     position.setFromMatrixPosition(matrixWorld);
     entity.setAttribute('position', position);
     entity.setAttribute('mixin', this.data.mixin);
-    entity.addEventListener('loaded', function () {
-      entityRotation = entity.getComputedAttribute('rotation');
+    entity.addEventListener('loaded', function() {
+      entityRotation = entity.getAttribute('rotation');
       entity.setAttribute('rotation', {
         x: entityRotation.x + rotation.x,
         y: entityRotation.y + rotation.y,
         z: entityRotation.z + rotation.z
+      });
+      entity.setAttribute('position', {
+        x: position.x,
+        y: position.y,
+        z: position.z + 2,
       });
     });
     el.sceneEl.appendChild(entity);
@@ -44,9 +50,9 @@ AFRAME.registerComponent('spawner', {
 
 AFRAME.registerComponent('click-listener', {
   // When the window is clicked, emit a click event from the entity.
-  init: function () {
+  init: function() {
     var el = this.el;
-    window.addEventListener('click', function () {
+    window.addEventListener('click', function() {
       console.log("ouch");
       el.emit('click', null, false);
     });

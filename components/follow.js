@@ -1,9 +1,16 @@
 // follow compononent
 AFRAME.registerComponent('follow', {
   schema: {
-    target: {type: 'selector'},
-    speed: {type: 'number'},
-    faceTarget:{type: 'boolean', default: false}
+    target: {
+      type: 'selector'
+    },
+    speed: {
+      type: 'number'
+    },
+    faceTarget: {
+      type: 'boolean',
+      default: false
+    }
   },
   init: function() {
     this.directionVec3 = new THREE.Vector3();
@@ -22,11 +29,13 @@ AFRAME.registerComponent('follow', {
     var distance = directionVec3.length();
     console.log(distance);
 
-    if (distance < 8) { return; }
+    if (distance < 8) {
+      return;
+    }
 
     // scale down magnitude to match speed
     var factor = this.data.speed / distance;
-    ['x', 'y', 'z'].forEach(function (axis) {
+    ['x', 'y', 'z'].forEach(function(axis) {
       directionVec3[axis] *= factor * (timeDelta / 1000);
     });
 
@@ -37,9 +46,9 @@ AFRAME.registerComponent('follow', {
       z: currentPosition.z + directionVec3.z
     });
 
-    if (this.data.faceTarget == true){
-     var zAngle = 90 - Math.atan2(directionVec3.z, directionVec3.x) * (180 / Math.PI);
-     this.el.setAttribute('rotation', 'y', zAngle);
-   }
+    if (this.data.faceTarget == true) {
+      var zAngle = 90 - Math.atan2(directionVec3.z, directionVec3.x) * (180 / Math.PI);
+      this.el.setAttribute('rotation', 'y', zAngle);
+    }
   }
 });

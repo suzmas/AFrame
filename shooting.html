@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Space</title>
-    <meta name="description" content="Space Scene">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@^3.1.1/dist/aframe-template-component.min.js"></script>
-    <script src="./components/spawner.js"></script>
 
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <img id="enemy-sprite" crossorigin="" src="https://ucarecdn.com/f11bb3e6-ceb4-427c-bcaa-351cabac37d5/">
+<head>
+  <meta charset="utf-8">
+  <title>Space</title>
+  <meta name="description" content="Space Scene">
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@^3.1.1/dist/aframe-template-component.min.js"></script>
+  <script src="./components/spawner.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="enemy-sprite" crossorigin="" src="https://ucarecdn.com/f11bb3e6-ceb4-427c-bcaa-351cabac37d5/" />
 
       <script id="enemies" type="text/x-nunjucks-template">
         <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
           {% for x in range(0, 10) %}
-            <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+          <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
           {% endfor %}
 
           <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
@@ -26,19 +28,17 @@
       </script>
 
       <!-- Laser -->
-      <a-mixin id="laser"
-               geometry="primitive: cylinder; radius: 0.05"
-               material="color: white; metalness: 0.2; roughness: 0.3"
-               rotation="90 0 0"></a-mixin>
+      <a-mixin id="laser" geometry="primitive: cylinder; radius: 0.05" material="color: white; metalness: 0.2; roughness: 0.3" rotation="90 0 0"></a-mixin>
 
     </a-assets>
 
 
-      <a-entity template="src: #enemies"></a-entity>
+    <a-entity template="src: #enemies"></a-entity>
 
-      <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener></a-camera>
+    <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener></a-camera>
 
-      <a-sky color="#252243"></a-sky>
-    </a-scene>
-  </body>
+    <a-sky color="#252243"></a-sky>
+  </a-scene>
+</body>
+
 </html>

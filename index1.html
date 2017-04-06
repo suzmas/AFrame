@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Campground- AFrame</title>
-    <meta name="description" content="Hello, World! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="./components/follow.js"></script>
 
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Campground- AFrame</title>
+  <meta name="description" content="Hello, World! - A-Frame">
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="./components/follow.js"></script>
 
-    <a-scene>
+</head>
+
+<body>
+
+  <a-scene>
     <a-assets>
       <a-asset-item id="outdoor-obj" src="./objects/campground.obj"></a-asset-item>
       <a-asset-item id="outdoor-mtl" src="./objects/campground.mtl"></a-asset-item>
@@ -39,37 +41,19 @@
     </a-entity>
 
     <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="44.5 0 -8.58" rotation="-90 0 0" scale="0.16 0.14 0.16">
-      <a-animation attribute="scale"
-            dur="1000"
-            from="0.16 0.14 0.16"
-            to="0.16 0.145 0.16"
-            direction="alternate"
-            repeat="indefinite">
-        </a-animation>
+      <a-animation attribute="scale" dur="1000" from="0.16 0.14 0.16" to="0.16 0.145 0.16" direction="alternate" repeat="indefinite">
+      </a-animation>
     </a-entity>
     <a-entity obj-model="obj: #fire-obj; mtl: #fire-mtl" position="45 0 -7.86" rotation="-90 0 0" scale="0.16 0.14 0.16">
-      <a-animation attribute="scale"
-            dur="300"
-            from="0.16 0.14 0.16"
-            to="0.16 0.138 0.16"
-            direction="alternate"
-            repeat="indefinite">
-        </a-animation>
-        <a-animation attribute="position"
-              dur="300"
-              to="45.25 -.2 -7.86"
-              direction="alternate"
-              repeat="indefinite">
-          </a-animation>
+      <a-animation attribute="scale" dur="300" from="0.16 0.14 0.16" to="0.16 0.138 0.16" direction="alternate" repeat="indefinite">
+      </a-animation>
+      <a-animation attribute="position" dur="300" to="45.25 -.2 -7.86" direction="alternate" repeat="indefinite">
+      </a-animation>
     </a-entity>
 
     <a-entity obj-model="obj: #bunny-obj; mtl: #bunny-mtl" position="1.53 0 -5.00" rotation="-90 0 0" scale="0.16 0.16 0.16">
-      <a-animation attribute="position"
-               dur="500"
-               to="2.53 1 -5.00"
-               repeat="1"
-               begin="mouseenter">
-        </a-animation>
+      <a-animation attribute="position" dur="500" to="2.53 1 -5.00" repeat="1" begin="mouseenter">
+      </a-animation>
     </a-entity>
     <a-entity follow="target: #user; speed: 1.5; faceTarget: true" obj-model="obj: #dog-obj; mtl: #dog-mtl" position="15 0 5" rotation="-90 -10 0" scale="0.1 0.1 0.1">
     </a-entity>
@@ -77,6 +61,7 @@
     <a-camera id="user" position="2 2.5 -8" rotation="0 90 0" look-controls>
       <a-cursor opacity="0.5"></a-cursor>
     </a-camera>
-    </a-scene>
-  </body>
+  </a-scene>
+</body>
+
 </html>

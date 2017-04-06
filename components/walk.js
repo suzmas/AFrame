@@ -1,11 +1,13 @@
 // walk component
 AFRAME.registerComponent('walk', {
   schema: {
-    walking: {default: true},
+    walking: {
+      default: true
+    },
   },
   init: function() {
     this.directionVec3 = new THREE.Vector3();
-    this.el.sceneEl.addEventListener('click', function(){
+    this.el.sceneEl.addEventListener('click', function() {
       var camEl = document.querySelector('a-camera');
       var walking = camEl.getAttribute('walk').walking;
       camEl.setAttribute('walk', 'walking', !walking);
@@ -19,7 +21,7 @@ AFRAME.registerComponent('walk', {
       var directionVec3 = this.directionVec3;
 
       var distance = .05;
-      this.el.object3D.translateZ( -distance );
+      this.el.object3D.translateZ(-distance);
     }
   }
 });
