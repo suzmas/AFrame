@@ -38,11 +38,6 @@ AFRAME.registerComponent('spawner', {
         y: entityRotation.y + rotation.y,
         z: entityRotation.z + rotation.z
       });
-      entity.setAttribute('position', {
-        x: position.x,
-        y: position.y,
-        z: position.z + 2,
-      });
     });
     el.sceneEl.appendChild(entity);
   }
@@ -56,5 +51,15 @@ AFRAME.registerComponent('click-listener', {
       console.log("ouch");
       el.emit('click', null, false);
     });
+  }
+});
+
+AFRAME.registerComponent('projectile', {
+  schema: {
+    speed: { default: 0.4 }
+  },
+  tick: function () {
+    var speed = this.data.speed;
+    this.el.object3D.translateY( -speed );
   }
 });
