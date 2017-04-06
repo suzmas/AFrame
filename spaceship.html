@@ -28,14 +28,17 @@
                    src="#enemy-alien"
                    random-position="min: -20 0 0; max: 20 20 -400"
                    transparent="true"
-                   scale="5 5 3"></a-image>
+                   scale="5 5 3">
+             // collision handler animation
+             <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+          </a-image>
         {% endfor %}
       </script>
 
       <!-- Laser -->
       <a-mixin id="laser"
                geometry="primitive: cylinder; radius: 0.05"
-               material="color: white; metalness: 0.2; roughness: 0.3"
+               material="color: blue; metalness: 0.2; roughness: 0.3; transparent: true;"
                rotation="90 0 0"
                projectile="speed: 0.4"
                collider="target: .enemy"></a-mixin>
