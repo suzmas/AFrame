@@ -2,7 +2,7 @@
 AFRAME.registerComponent('walk', {
   schema: {
     walking: {
-      default: true
+      default: false
     },
   },
   init: function() {

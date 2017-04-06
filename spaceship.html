@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Flying!!</title>
+  <meta name="description" content="Flying! - A-Frame">
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="/components/randomize.js"></script>
+  <script src="/components/fly.js"></script>
+</head>
+
+<body>
+  <a-scene>
+
+    <a-assets>
+      <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+      <img id="enemy-alien" src="/images/alien.svg" />
+    </a-assets>
+
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+    <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+    <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+    <a-entity light="color: white; type: ambient;"></a-entity>
+    <a-box id="floor" position="0 0 0" color="yellow" scale="10 0.2 10"></a-box>
+    <a-plane material="src: #grid; repeat: 20 80; transparent: true; metalness:0.6; roughness: 0.4" width="100" height="400" position="0 -2 -200" rotation="-90 0 0"></a-plane>
+    <a-image class="enemy" src="#enemy-alien" random-position="min: -20 0 0; max: 20 20 -400" transparent="true" scale="5 5 0 3"></a-image>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-torus random-color random-position="min: -20 0 0; max: 20 20 -400" radius="4"></a-torus>
+    <a-cylinder color="magenta" position="4 1 -3" radius="0.5" height="2"></a-cylinder>
+    <a-cylinder color="magenta" position="-4 1 -3" radius="0.5" height="2"></a-cylinder>
+    <a-box id="ship" height="0.2" position="0 0.6 -2" color="lime" lock-to-camera></a-box>
+    <a-camera wasd-controls="fly: true" click-to-fly>
+    </a-camera>
+</body>
+
+</html>
