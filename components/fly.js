@@ -26,7 +26,6 @@ AFRAME.registerComponent('click-to-fly', {
     var flying = data.flying;
     this.rotX = 0;
     this.rotZ = 0;
-    console.log(flying);
     if (flying == true) {
       var pos = this.el.getAttribute('position');
       if (window.DeviceMotionEvent != undefined) {
@@ -61,7 +60,6 @@ AFRAME.registerComponent('lock-to-camera', {
     //this.time = t;
     var camEl = document.querySelector('a-camera');
     var flying = camEl.getAttribute('click-to-fly').flying;
-    console.log(flying);
     if (flying == true) {
       var camPos = camEl.getAttribute('position');
       this.el.setAttribute('position', {

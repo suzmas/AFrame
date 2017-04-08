@@ -55,11 +55,14 @@ AFRAME.registerComponent('click-listener', {
 
 AFRAME.registerComponent('projectile', {
   schema: {
-    speed: { default: 0.4 }
+    speed: { default: 0.6 }
   },
-  tick: function () {
+  tick: function (t) {
+    console.log(t);
     var speed = this.data.speed;
     this.el.object3D.translateY( -speed );
+    var entity = this.el;
+    if (t > 1000) { this.el.removeObject3D(); }
   }
 });
 
@@ -70,6 +73,7 @@ AFRAME.registerComponent('collider', {
 
   // Calc targets
   init: function () {
+    console.log(this);
     var targetEls = this.el.sceneEl.querySelectorAll(".enemy");
     this.targets = [];
     for (var i=0; i<targetEls.length; i++) {

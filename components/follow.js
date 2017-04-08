@@ -27,7 +27,6 @@ AFRAME.registerComponent('follow', {
 
     // calc dist
     var distance = directionVec3.length();
-    console.log(distance);
 
     if (distance < 8) {
       return;

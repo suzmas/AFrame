@@ -14,16 +14,16 @@
 </head>
 
 <body>
-  <a-scene>
+  <a-scene stats>
 
     <a-assets>
-      <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
-      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+      <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" />
+      <img id="sky" src="./images/space.jpg"/>
       <img id="enemy-alien" src="./images/alien.svg" />
 
       <!-- Generate randomly placed enemies -->
       <script id="enemies" type="text/x-nunjucks-template">
-        {% for i in range(0,30) %}
+        {% for i in range(0,10) %}
           <a-image class="enemy"
                    src="#enemy-alien"
                    random-position="min: -20 0 0; max: 20 20 -400"
@@ -37,7 +37,7 @@
 
       <!-- Laser -->
       <a-mixin id="laser"
-               geometry="primitive: cylinder; radius: 0.05"
+               geometry="primitive: cylinder; radius: 0.05; height: 2;"
                material="color: blue; metalness: 0.2; roughness: 0.3; transparent: true;"
                rotation="90 0 0"
                projectile="speed: 0.4"
@@ -46,10 +46,10 @@
     </a-assets>
 
     <a-sky src="#sky" rotation="0 -90 0"></a-sky>
-    <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+    <!-- <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
     <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
     <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
-    <a-entity light="color: white; type: ambient;"></a-entity>
+    <a-entity light="color: white; type: ambient;"></a-entity> -->
 
     <a-entity template="src: #enemies"></a-entity>
 

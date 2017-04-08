@@ -17,7 +17,6 @@ AFRAME.registerComponent('walk', {
   tick: function(time) {
 
     if (this.data.walking) {
-      console.log("we are walking");
       var directionVec3 = this.directionVec3;
 
       var distance = .05;
