@@ -19,7 +19,7 @@
 
       <script id="enemies" type="text/x-nunjucks-template">
         <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
-          {% for x in range(0, 10) %}
+          {% for x in range(0, 15) %}
           <a-image class="enemy" look-at="#player" src="#enemy-alien" transparent="true">
             // collision handler animation
             <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
