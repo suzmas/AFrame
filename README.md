@@ -1,8 +1,15 @@
 # A-Frame Scenes
 
-Repo for creating WebVR scenes using A-Frame.
+Repo for creating WebVR scenes using A-Frame, Three, and AR.js. If you don't know about these libraries, they're javascript based and they're awesome! I created most of the objects in my scenes with __[TinkerCAD](https://www.tinkercad.com)__ which is a free browser-based 3D modeling tool. 
 
-## Getting Started
+Moving forward I'd like to:
+
+    - enhance mobile performance of my space shooter game
+    - create multi-scene experiences without page redirects... maybe with React?
+    - do more things with AR.js
+    - animated experience with user-camera fixed along path
+
+## Getting Started with A-Frame
 
 ### <sup>Option 1:</sup> Fork this Git repo
 
@@ -29,23 +36,6 @@ After you have __[forked this repo](https://github.com/aframevr/aframe-boilerpla
 
 <hr>
 
-## Publishing your scene
-
-If you don't already know, GitHub offers free and awesome publishing of static sites through __[https://pages.github.com/](GitHub Pages)__.
-
-To publish your scene to your personal GitHub Pages:
-
-    npm run deploy
-
-And, it'll now be live at __http://`your_username`.github.io/__ :)
-
-<hr>
-
-To know which GitHub repo to deploy to, the `deploy` script first looks at the optional [`repository` key](https://docs.npmjs.com/files/package.json#repository) in the [`package.json` file](package.json) (see [npm docs](https://docs.npmjs.com/files/package.json#repository) for sample usage). If the `repository` key is missing, the script falls back to using the local git repo's remote origin URL (you can run the local command `git remote -v` to see all your remotes; also, you may refer to the [GitHub docs](https://help.github.com/articles/about-remote-repositories/) for more information).
-
-<hr>
-
-## Still need Help?
 
 ### Installation
 
