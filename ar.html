@@ -1,38 +1,17 @@
 <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
-<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded artoolkit='sourceType: webcam;'>
     <a-assets>
 
-			<img id="suz" src="./images/the_suze.png" />
-
-      <a-asset-item id="alien_spaceship-obj" src="./objects/alien_spaceship.obj"></a-asset-item>
-      <a-asset-item id="alien_spaceship-mtl" src="./objects/alien_spaceship.mtl"></a-asset-item>
-
-      <a-asset-item id="alien1-obj" src="./objects/alien1.obj"></a-asset-item>
-      <a-asset-item id="alien1-mtl" src="./objects/alien1.mtl"></a-asset-item>
-
-      <a-asset-item id="tree-obj" src="./objects/tree.obj"></a-asset-item>
       <a-asset-item id="boxy_robot-obj" src="./objects/boxy_robot.obj"></a-asset-item>
       <a-asset-item id="boxy_robot-mtl" src="./objects/boxy_robot.mtl"></a-asset-item>
 
     </a-assets>
 
-    <a-sky src="./images/galaxy.jpg"></a-sky>
+		<a-entity obj-model="obj: #boxy_robot-obj; mtl: #boxy_robot-mtl" scale=".03 .03 .03" rotation="-90 0 0" position="0 0 -2"></a-entity>
+		<a-box color="black" depth="1" height="5" width="5" position="0 -1 -2"></a-box>
 
-		<a-entity obj-model="obj: #boxy_robot-obj; mtl: #boxy_robot-mtl" scale=".05 .05 .05" rotation="-90 0 0" position="0 1 0"></a-entity>
-
-
-    <!-- planet group -->
-    <!-- <a-entity> -->
-
-      <!-- <a-entity geometry="primitive: sphere" material="color: blue" scale="0.5 0.5 0.5" position="2 3 0"></a-entity>
-      <a-entity geometry="primitive: sphere" material="color: pink; opacity: 0.5;" scale="0.5 0.5 0.5" position="1 4 0"></a-entity>
-      <a-entity geometry="primitive: sphere" material="color: orange" scale="0.5 0.5 0.5" position="1 2 0"></a-entity>
-
-      <a-animation attribute="rotation" dur="20000" fill="forwards" to="0 -360 0" repeat="indefinite"></a-animation>
-    </a-entity> --> -->
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
