@@ -14,20 +14,15 @@
       <a-asset-item id="alien1-mtl" src="./objects/alien1.mtl"></a-asset-item>
 
       <a-asset-item id="tree-obj" src="./objects/tree.obj"></a-asset-item>
-      <a-asset-item id="future_tree-obj" src="./objects/future_tree.obj"></a-asset-item>
-      <a-asset-item id="tree-mtl" src="./objects/tree.mtl"></a-asset-item>
+      <a-asset-item id="boxy_robot-obj" src="./objects/boxy_robot.obj"></a-asset-item>
+      <a-asset-item id="boxy_robot-mtl" src="./objects/boxy_robot.mtl"></a-asset-item>
 
     </a-assets>
 
     <a-sky src="./images/galaxy.jpg"></a-sky>
 
-    <a-entity>
-      <a-entity obj-model="obj: #alien_spaceship-obj; mtl: #alien_spaceship-mtl" scale="0.05 0.05 0.05" rotation="-90 0 0" position="0 1 0">
-        </a-animation>
-      </a-entity>
+		<a-entity obj-model="obj: #boxy_robot-obj; mtl: #boxy_robot-mtl" scale=".05 .05 .05" rotation="-90 0 0" position="0 1 0"></a-entity>
 
-      <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 -360 0" repeat="indefinite"></a-animation>
-    </a-entity>
 
     <!-- planet group -->
     <!-- <a-entity> -->
@@ -38,12 +33,6 @@
 
       <a-animation attribute="rotation" dur="20000" fill="forwards" to="0 -360 0" repeat="indefinite"></a-animation>
     </a-entity> --> -->
-		<a-image src="#suz"
-						 transparent="true"
-						 material="opacity: 0.5;"
-						 rotation="-5 0 0"
-						 scale="5 5 3"></a-image>
-
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
